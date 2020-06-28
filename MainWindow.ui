@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="StlViewer">
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -89,7 +89,6 @@
     <addaction name="actionOpenFile"/>
     <addaction name="actionTakeScreenShot"/>
     <addaction name="separator"/>
-    <addaction name="actionPrint"/>
     <addaction name="actionHelp"/>
     <addaction name="actionExit"/>
    </widget>
@@ -115,7 +114,6 @@
    <addaction name="actionOpenFile"/>
    <addaction name="actionTakeScreenShot"/>
    <addaction name="separator"/>
-   <addaction name="actionPrint"/>
    <addaction name="actionHelp"/>
   </widget>
   <action name="actionOpenFile">
@@ -133,15 +131,6 @@
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
-   </property>
-  </action>
-  <action name="actionPrint">
-   <property name="icon">
-    <iconset resource="Icons/icons.qrc">
-     <normaloff>:/Icons/print.png</normaloff>:/Icons/print.png</iconset>
-   </property>
-   <property name="text">
-    <string>Print</string>
    </property>
   </action>
   <action name="actionHelp">

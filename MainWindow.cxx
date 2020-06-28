@@ -18,6 +18,7 @@ MainWindow::MainWindow()
 {
   this->ui = new Ui_MainWindow;
   this->ui->setupUi(this);
+  this->setWindowIcon(QIcon(":/Icons/stl.png"));
 
 
   // Geometry

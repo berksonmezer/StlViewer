@@ -1,8 +1,8 @@
 <RCC>
   <qresource prefix="/Icons">
-    <file>print.png</file>
     <file>takescreenshot.png</file>
     <file>help.png</file>
     <file>openfile.png</file>
+    <file>stl.png</file>
   </qresource>
 </RCC>
