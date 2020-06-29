@@ -20,6 +20,13 @@ find_package(VTK COMPONENTS
   vtkInfovisCore
   vtkInteractionStyle
   vtkViewsQt
+  vtkCommonDataModel
+  vtkIOGeometry
+  vtkRenderingContextOpenGL2
+  vtkRenderingCore
+  vtkRenderingFreeType
+  vtkRenderingGL2PSOpenGL2
+  vtkRenderingOpenGL2
 )
 include(${VTK_USE_FILE})
 
@@ -34,9 +41,9 @@ include_directories(
 )
 
 # Set your files and resources here
-set( Srcs main.cxx MainWindow.cxx )
+set( Srcs main.cxx MainWindow.cxx StlObject.cxx)
 
-set( Hdrs MainWindow.h )
+set( Hdrs MainWindow.h StlObject.h)
 
 set( MOC_Hdrs MainWindow.h )
 

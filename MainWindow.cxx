@@ -11,7 +11,8 @@
 #include "vtkSmartPointer.h"
 #include <vtkVectorText.h>
 
-
+#include "StlObject.h"
+#include <memory>
 
 // Constructor
 MainWindow::MainWindow()
@@ -21,21 +22,19 @@ MainWindow::MainWindow()
   this->setWindowIcon(QIcon(":/Icons/stl.png"));
 
 
-  // Geometry
-  vtkNew<vtkVectorText> text;
-  text->SetText("VTK and Qt");
-  vtkNew<vtkElevationFilter> elevation;
-  elevation->SetInputConnection(text->GetOutputPort());
-  elevation->SetLowPoint(0,0,0);
-  elevation->SetHighPoint(10,0,0);
 
-  // Mapper
+/*  // Mapper
   vtkNew<vtkPolyDataMapper> mapper;
   mapper->SetInputConnection(elevation->GetOutputPort());
 
   // Actor in scene
   vtkNew<vtkActor> actor;
   actor->SetMapper(mapper);
+  */
+
+  // Read Stl File
+  std::unique_ptr<StlObject> stlObject(new StlObject(std::string("C:\\Users\\Berk\\Downloads\\Impeller.stl")));
+  vtkActor* actor = stlObject->GetActor();
 
   // VTK Renderer
   vtkNew<vtkRenderer> ren;
