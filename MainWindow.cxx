@@ -12,6 +12,7 @@
 #include <vtkVectorText.h>
 
 #include "StlObject.h"
+#include "FileDialog.h"
 #include <memory>
 
 // Constructor
@@ -20,17 +21,6 @@ MainWindow::MainWindow()
   this->ui = new Ui_MainWindow;
   this->ui->setupUi(this);
   this->setWindowIcon(QIcon(":/Icons/stl.png"));
-
-
-
-/*  // Mapper
-  vtkNew<vtkPolyDataMapper> mapper;
-  mapper->SetInputConnection(elevation->GetOutputPort());
-
-  // Actor in scene
-  vtkNew<vtkActor> actor;
-  actor->SetMapper(mapper);
-  */
 
   // Read Stl File
   std::unique_ptr<StlObject> stlObject(new StlObject(std::string("C:\\Users\\Berk\\Downloads\\Impeller.stl")));
@@ -65,7 +55,8 @@ MainWindow::~MainWindow()
 // Action to be taken upon file open
 void MainWindow::slotOpenFile()
 {
-
+	FileDialog *fileDialog = new FileDialog();
+	fileDialog->getOpenFileName(this, "Select File", "/", "Stl Files (*.stl)");
 }
 
 void MainWindow::slotExit() {

@@ -13,6 +13,8 @@ public:
 	~StlObject();
 	
 	vtkActor* GetActor();
+
+private:
 	vtkNew<vtkSTLReader> stlReader;
 	vtkNew<vtkPolyDataMapper> mapper;
 	vtkNew<vtkActor> actor;

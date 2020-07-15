@@ -41,9 +41,9 @@ include_directories(
 )
 
 # Set your files and resources here
-set( Srcs main.cxx MainWindow.cxx StlObject.cxx)
+set( Srcs main.cxx MainWindow.cxx StlObject.cxx FileDialog.cxx)
 
-set( Hdrs MainWindow.h StlObject.h)
+set( Hdrs MainWindow.h StlObject.h FileDialog.h)
 
 set( MOC_Hdrs MainWindow.h )
 
